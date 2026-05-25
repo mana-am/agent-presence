@@ -7,7 +7,7 @@
 
 - Website: https://mana.am
 - App Store: https://apps.apple.com/app/id6757949329
-- Platform: iOS 18.0+
+- Platform: iOS 26+
 
 This repository is Mana's **public agent & developer presence**: machine-readable
 docs, an agent skill, and instructions for how AI agents and AI coding tools

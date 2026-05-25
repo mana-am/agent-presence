@@ -5,7 +5,7 @@ license: proprietary
 metadata:
   homepage: https://mana.am
   openapi: https://mana.am/openapi.json
-  platform: iOS 18.0+
+  platform: iOS 26+
 ---
 
 # Mana
@@ -69,7 +69,7 @@ curl "https://api.mana.am/public/share/user/cheese"
   or edit creations via the API.
 - The public API is read-only and should be treated as fair-use (no rate-limit
   headers are emitted).
-- Targets iOS 18.0+; non-Mana recipients use the PWA fallback.
+- Targets iOS 26+; non-Mana recipients use the PWA fallback.
 
 ## Links
 

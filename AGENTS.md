@@ -7,7 +7,7 @@ how to understand and work with Mana. Canonical home: https://mana.am.
 
 Mana is an **end-user AI Personal Agent for iPhone**: a person describes what
 they want in plain language, and Mana writes the code, runs it, fixes its own
-errors, and ships a real creation that runs natively on iOS 18.0+. Creations get
+errors, and ships a real creation that runs natively on iOS 26+. Creations get
 a public `{handle}.mana.am` link and can be remixed.
 
 Mana is **not** a library, SDK, or framework you import. There is no package to
@@ -41,7 +41,7 @@ schema: https://mana.am/openapi.json. Responses use `{ "code": 0, "data": ... }`
 - Treat the public API as fair-use; it emits no rate-limit headers.
 - For product facts, pricing, and capabilities, prefer the canonical sources:
   https://mana.am/llms-full.txt and https://mana.am/pricing.md — do not guess.
-- Mana targets iOS 18.0+; recipients without Mana open shared creations as a PWA.
+- Mana targets iOS 26+; recipients without Mana open shared creations as a PWA.
 
 ## Canonical context for retrieval
 
