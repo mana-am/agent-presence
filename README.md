@@ -1,5 +1,7 @@
 # Mana
 
+[![skills.sh](https://skills.sh/b/mana-am/agent-presence)](https://skills.sh/mana-am/agent-presence)
+
 > Your Personal Agent for iPhone. Describe what you want in plain language and
 > Mana turns it into a real, runnable creation on your iPhone — apps, trackers,
 > two-player games, and shared albums — with a real backend wired in.
