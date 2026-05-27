@@ -5,6 +5,9 @@ license: proprietary
 metadata:
   homepage: https://mana.am
   openapi: https://mana.am/openapi.json
+  mcp: https://api.mana.am/mcp
+  mcp_server_card: https://api.mana.am/.well-known/mcp/server-card.json
+  webmcp: https://mana.am/.well-known/webmcp.json
   platform: iOS 26+
 ---
 
@@ -62,13 +65,36 @@ Example — a creator's public profile:
 curl "https://api.mana.am/public/share/user/cheese"
 ```
 
+## MCP tools
+
+Mana's canonical read-only MCP server is `https://api.mana.am/mcp`, using
+Streamable HTTP. Discovery lives at `https://mana.am/.well-known/mcp` and the
+server card is `https://api.mana.am/.well-known/mcp/server-card.json`.
+
+Use MCP when the host supports tool calls and the user asks to browse public
+Mana creations, tags, creators, or one shared app.
+
+- `search_community_apps` — search/browse public community creations.
+- `get_popular_tags` — list popular tags.
+- `get_creator_profile` — fetch public creator profile data by handle.
+- `get_app_share` — fetch public share data by handle and slug.
+
+Example tool listing:
+
+```bash
+curl -X POST "https://api.mana.am/mcp" \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+```
+
 ## Constraints
 
-- There is **no** public write API, OAuth-for-agents flow, or MCP server.
-  Building creations happens inside the Mana iOS app. Do not attempt to create
-  or edit creations via the API.
-- The public API is read-only and should be treated as fair-use (no rate-limit
-  headers are emitted).
+- There is **no** public write API or OAuth-for-agents flow. Building
+  creations happens inside the Mana iOS app. Do not attempt to create, edit,
+  publish, delete, or manage creations via the API or MCP server.
+- The public API and MCP server are read-only and should be treated as
+  fair-use.
 - Targets iOS 26+; non-Mana recipients use the PWA fallback.
 
 ## Links
@@ -77,5 +103,8 @@ curl "https://api.mana.am/public/share/user/cheese"
 - Pricing: https://mana.am/pricing.md
 - Auth: https://mana.am/auth.md
 - OpenAPI: https://mana.am/openapi.json
+- MCP: https://api.mana.am/mcp
+- MCP server card: https://api.mana.am/.well-known/mcp/server-card.json
+- WebMCP: https://mana.am/.well-known/webmcp.json
 - App Store: https://apps.apple.com/app/id6757949329
 - Support: support@mana.am

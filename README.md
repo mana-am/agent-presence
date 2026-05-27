@@ -45,8 +45,31 @@ envelope `{ "code": 0, "data": ... }`.
 curl "https://api.mana.am/public/share/community?sort=recent&limit=5"
 ```
 
-There is **no** public write API, OAuth-for-agents flow, or MCP server —
-building happens in the iOS app.
+There is **no** public write API or OAuth-for-agents flow. Public automation is
+read-only. Building happens in the iOS app.
+
+## MCP server
+
+Mana publishes a read-only MCP server for public community data.
+
+- Canonical Streamable HTTP transport: https://api.mana.am/mcp
+- Discovery: https://mana.am/.well-known/mcp
+- Server card: https://api.mana.am/.well-known/mcp/server-card.json
+- WebMCP manifest: https://mana.am/.well-known/webmcp.json
+
+Tools:
+
+- `search_community_apps`
+- `get_popular_tags`
+- `get_creator_profile`
+- `get_app_share`
+
+```bash
+curl -X POST "https://api.mana.am/mcp" \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+```
 
 ## For AI agents
 
@@ -56,7 +79,14 @@ building happens in the iOS app.
 - Context index: https://mana.am/llms.txt and https://mana.am/llms-full.txt
 - Pricing: https://mana.am/pricing.md · Auth: https://mana.am/auth.md
 
+Install the skill locally:
+
+```bash
+npx skills add mana-am/agent-presence@mana
+```
+
 ## Links
 
 - X / Twitter: https://x.com/try_mana_app
+- MCP registry target: https://api.mana.am/mcp
 - Support: support@mana.am

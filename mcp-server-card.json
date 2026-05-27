@@ -1,0 +1,32 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/2025-11-25/server-card.json",
+  "name": "mana-public",
+  "description": "Read-only Streamable HTTP MCP surface for Mana public community data: published creations, popular tags, creator profiles, and app share data.",
+  "version": "1.0.0",
+  "serverUrl": "https://api.mana.am/mcp",
+  "transport": {
+    "type": "streamable-http",
+    "url": "https://api.mana.am/mcp"
+  },
+  "authentication": {
+    "type": "none"
+  },
+  "tools": [
+    {
+      "name": "search_community_apps",
+      "description": "Search and browse published Mana creations."
+    },
+    {
+      "name": "get_popular_tags",
+      "description": "List popular tags used by the Mana community."
+    },
+    {
+      "name": "get_creator_profile",
+      "description": "Look up a public Mana creator profile."
+    },
+    {
+      "name": "get_app_share",
+      "description": "Fetch public share data for one Mana creation."
+    }
+  ]
+}
