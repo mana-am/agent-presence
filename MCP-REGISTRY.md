@@ -41,7 +41,14 @@ The official MCP Registry is in preview and uses `mcp-publisher`.
 ```bash
 brew install mcp-publisher
 mcp-publisher --help
-mcp-publisher login dns --domain mana.am
+```
+
+Mana uses HTTP domain authentication so the proof can be hosted at
+`https://mana.am/.well-known/mcp-registry-auth` without changing DNS records.
+
+```bash
+PRIVATE_KEY="$(openssl pkey -in ~/.config/mana/mcp-registry-ed25519.pem -noout -text | awk '/priv:/{flag=1;next}/pub:/{flag=0}flag' | tr -d ' :\n')"
+mcp-publisher login http --domain mana.am --private-key "$PRIVATE_KEY"
 mcp-publisher publish
 ```
 
@@ -49,7 +56,8 @@ If publishing from the standalone agent repo, download the deployed manifest:
 
 ```bash
 curl -L https://mana.am/.well-known/mcp/server.json -o server.json
-mcp-publisher login dns --domain mana.am
+PRIVATE_KEY="$(openssl pkey -in ~/.config/mana/mcp-registry-ed25519.pem -noout -text | awk '/priv:/{flag=1;next}/pub:/{flag=0}flag' | tr -d ' :\n')"
+mcp-publisher login http --domain mana.am --private-key "$PRIVATE_KEY"
 mcp-publisher publish
 ```
 
@@ -61,9 +69,10 @@ mcp-publisher publish
 - Support: `support@mana.am`
 
 Use MCP Registry domain authentication for `mana.am`; the server name
-`am.mana/mana-public` follows the reverse-DNS namespace for `mana.am`. If using
-GitHub authentication instead, the name must change to the GitHub namespace
-format, for example `io.github.mana-am/mana-public`.
+`am.mana/mana-public` follows the reverse-DNS namespace for `mana.am`. The HTTP
+proof file is `https://mana.am/.well-known/mcp-registry-auth`. If using GitHub
+authentication instead, the name must change to the GitHub namespace format,
+for example `io.github.mana-am/mana-public`.
 
 ## Verification checks
 
