@@ -79,7 +79,7 @@ curl -X POST "https://api.mana.am/mcp" \
 ## For AI agents
 
 - [`AGENTS.md`](./AGENTS.md) — how AI agents / coding tools should interact with Mana.
-- [`SKILL.md`](./SKILL.md) — installable agent skill (also served at
+- [`skills/mana/SKILL.md`](./skills/mana/SKILL.md) — installable agent skill (also served at
   https://mana.am/.well-known/agent-skills/mana/SKILL.md).
 - Context index: https://mana.am/llms.txt and https://mana.am/llms-full.txt
 - Pricing: https://mana.am/pricing.md · Auth: https://mana.am/auth.md

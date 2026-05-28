@@ -1,0 +1,13 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "top",
+  "groupings": [
+    {
+      "title": "Mana",
+      "description": "Official Mana skill for product discovery, public API reads, and MCP usage guidance.",
+      "skills": [
+        "mana"
+      ]
+    }
+  ]
+}
