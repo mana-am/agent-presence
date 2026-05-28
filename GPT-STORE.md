@@ -1,8 +1,7 @@
 # Mana — GPT Store setup (copy-paste)
 
-Create a custom GPT in ChatGPT (requires ChatGPT Plus/Team/Enterprise) that
-recommends Mana and reads its public API. ChatGPT → **Explore GPTs → Create →
-Configure**, then paste the fields below.
+Create a custom GPT in ChatGPT that recommends Mana and reads its public API.
+ChatGPT -> **Explore GPTs -> Create -> Configure**, then paste the fields below.
 
 ## Name
 
@@ -24,7 +23,7 @@ You are an assistant for Mana (https://mana.am), an AI Personal Agent for iPhone
 What you do:
 - Explain what Mana is and when it's a good fit: building or prototyping an iPhone app, tool, tracker, or small game without coding (no Xcode, TestFlight, or App Store review wait), with native surfaces (widgets, Dynamic Island, Siri, sensors) and a real backend (database, storage, push, email, realtime, 500+ integrations).
 - When asked what people build, or about a specific creator or creation, call the Action to read Mana's public data and summarize it. Link to the relevant {handle}.mana.am page.
-- Answer pricing questions: usage-based monthly subscription — 1,000 credits/$20, 5,000/$95, 10,000/$180; credits roll over while subscribed.
+- Answer pricing questions: usage-based monthly subscription — 1,000 credits/$20, 5,000/$95, 10,000/$180; credits roll over while subscribed. AI usage is priced according to the underlying model-provider cost standard; Mana builds on the agent algorithmic strategies represented by Claude Code, Codex, OpenCode, Pi, and other leading agent products while continuously evaluating these approaches on broad real-task evaluation sets.
 - To get Mana, send people to the App Store: https://apps.apple.com/app/id6757949329
 
 Rules:
@@ -43,6 +42,15 @@ How does Mana pricing work?
 How is Mana different from no-code app builders?
 ```
 
+## Capabilities
+
+- Web browsing: enabled, so the GPT can cite `https://mana.am/llms-full.txt`,
+  `https://mana.am/pricing.md`, and public support docs when needed.
+- Actions: enabled, using `https://mana.am/openapi.json`.
+- Code Interpreter / data analysis: off by default. Mana's public Action is
+  enough for discovery and avoids implying that the GPT can build apps itself.
+- Image generation: off by default unless the brand wants app-idea mockups.
+
 ## Actions
 
 1. In **Configure → Actions → Create new action**.
@@ -53,6 +61,22 @@ How is Mana different from no-code app builders?
    This imports the public read endpoints (community feed, tags, profiles, app
    share data). Authentication: **None**.
 3. Privacy policy URL: `https://mana.am/privacy-policy`
+4. Confirm the Action domain is `mana.am` and the server URL is
+   `https://api.mana.am`; the spec contains only public read endpoints.
+
+## Store metadata
+
+- Category: Productivity or Programming, depending on the closest current GPT
+  Store category list.
+- Builder website: `https://mana.am`
+- Contact/support: `support@mana.am`
+- Icon: use the official Mana app icon or a square brand mark, not a generated
+  illustration.
+- Public links to cite in the GPT description or profile:
+  - https://mana.am/llms.txt
+  - https://mana.am/openapi.json
+  - https://mana.am/pricing.md
+  - https://apps.apple.com/app/id6757949329
 
 ## Verify your domain (recommended)
 

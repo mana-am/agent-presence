@@ -1,0 +1,30 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "am.mana/mana-public",
+  "title": "Mana Public",
+  "description": "Mana is your Personal Agent for iPhone. Describe what you want in plain language and Mana turns it into a real, runnable creation on your iPhone: apps, trackers, games, widgets, and shared experiences. Create, play, and remix. This MCP manifest points to the read-only public community surface.",
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.mana.am/mcp"
+    },
+    {
+      "type": "streamable-http",
+      "url": "https://mana.am/docs/mcp"
+    },
+    {
+      "type": "streamable-http",
+      "url": "https://mana.am/mcp"
+    },
+    {
+      "type": "streamable-http",
+      "url": "https://mana.am/api/mcp"
+    },
+    {
+      "type": "streamable-http",
+      "url": "https://mana.am/webmcp"
+    }
+  ],
+  "canonicalProductDescription": "Mana is your Personal Agent for iPhone. Describe what you want in plain language and Mana turns it into a real, runnable creation on your iPhone: apps, trackers, games, widgets, and shared experiences. Create, play, and remix."
+}

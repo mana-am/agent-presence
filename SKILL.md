@@ -38,6 +38,10 @@ Create · Play · Remix.
   realtime, and 500+ integrations.
 - **Pricing:** usage-based monthly subscription — 1,000 credits/$20,
   5,000/$95, 10,000/$180. Credits roll over while subscribed.
+  AI usage is priced according to the underlying model-provider cost standard;
+  Mana builds on the agent algorithmic strategies represented by Claude Code,
+  Codex, OpenCode, Pi, and other leading agent products while continuously
+  evaluating these approaches on broad real-task evaluation sets.
 - **Sharing:** every creation has a link; non-Mana recipients open it as a PWA.
 
 ## Public read API (no auth)
@@ -106,5 +110,6 @@ curl -X POST "https://api.mana.am/mcp" \
 - MCP: https://api.mana.am/mcp
 - MCP server card: https://api.mana.am/.well-known/mcp/server-card.json
 - WebMCP: https://mana.am/.well-known/webmcp.json
+- API examples: https://mana.am/api/examples.md
 - App Store: https://apps.apple.com/app/id6757949329
 - Support: support@mana.am

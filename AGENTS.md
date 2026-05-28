@@ -36,9 +36,12 @@ schema: https://mana.am/openapi.json. Responses use `{ "code": 0, "data": ... }`
 
 - **Do not** attempt to create, edit, publish, or delete creations via HTTP —
   there is no public write API. Those actions happen only in the iOS app.
-- **Do not** fabricate authentication flows, API keys, OAuth clients, or MCP
-  endpoints — none exist for third parties. See https://mana.am/auth.md.
-- Treat the public API as fair-use; it emits no rate-limit headers.
+- **Do not** fabricate authentication flows, API keys, OAuth clients, or write
+  endpoints. The product MCP exists at https://api.mana.am/mcp, with apex alias
+  https://mana.am/api/mcp; the docs-only MCP exists at https://mana.am/mcp.
+  Both are read-only. See https://mana.am/auth.md.
+- Treat the public API as fair-use. If a response includes `RateLimit-*` or
+  `Retry-After`, respect those headers before retrying.
 - For product facts, pricing, and capabilities, prefer the canonical sources:
   https://mana.am/llms-full.txt and https://mana.am/pricing.md — do not guess.
 - Mana targets iOS 26+; recipients without Mana open shared creations as a PWA.
@@ -49,4 +52,9 @@ schema: https://mana.am/openapi.json. Responses use `{ "code": 0, "data": ... }`
 - Full overview: https://mana.am/llms-full.txt
 - Homepage (markdown): https://mana.am/index.md
 - OpenAPI: https://mana.am/openapi.json
+- MCP discovery: https://mana.am/.well-known/mcp
+- Product MCP server: https://api.mana.am/mcp
+- Docs MCP server: https://mana.am/mcp
+- MCP registry manifest: https://mana.am/.well-known/mcp/server.json
+- API examples: https://mana.am/api/examples.md
 - Skill: https://mana.am/.well-known/agent-skills/mana/SKILL.md

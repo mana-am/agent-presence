@@ -1,6 +1,6 @@
 # Mana
 
-[![skills.sh](https://skills.sh/b/mana-am/agent-presence)](https://skills.sh/mana-am/agent-presence)
+[![skills.sh](https://skills.sh/b/mana-am/agent-presence)](https://skills.sh/mana-am/agent-presence/mana)
 
 > Your Personal Agent for iPhone. Describe what you want in plain language and
 > Mana turns it into a real, runnable creation on your iPhone — apps, trackers,
@@ -33,12 +33,12 @@ are baked into every creation.
 
 Base URL `https://api.mana.am`. No authentication; read-only; fair-use.
 
-| Endpoint | Description |
-| --- | --- |
-| `GET /public/share/community` | Paginated, sortable, searchable community feed |
-| `GET /public/share/tags` | Globally popular tags with counts |
-| `GET /public/share/user/{handle}` | Public creator profile + their public apps |
-| `GET /public/share/app/{handle}/{slug}` | Public data for one creation |
+| Endpoint                                | Description                                    |
+| --------------------------------------- | ---------------------------------------------- |
+| `GET /public/share/community`           | Paginated, sortable, searchable community feed |
+| `GET /public/share/tags`                | Globally popular tags with counts              |
+| `GET /public/share/user/{handle}`       | Public creator profile + their public apps     |
+| `GET /public/share/app/{handle}/{slug}` | Public data for one creation                   |
 
 Full schema: **[OpenAPI 3.1](https://mana.am/openapi.json)**. Responses use the
 envelope `{ "code": 0, "data": ... }`.
@@ -55,8 +55,11 @@ read-only. Building happens in the iOS app.
 Mana publishes a read-only MCP server for public community data.
 
 - Canonical Streamable HTTP transport: https://api.mana.am/mcp
+- Product alias: https://mana.am/api/mcp
+- Docs-only MCP: https://mana.am/docs/mcp and https://mana.am/mcp
 - Discovery: https://mana.am/.well-known/mcp
 - Server card: https://api.mana.am/.well-known/mcp/server-card.json
+- Registry manifest: https://mana.am/.well-known/mcp/server.json
 - WebMCP manifest: https://mana.am/.well-known/webmcp.json
 
 Tools:
@@ -80,12 +83,22 @@ curl -X POST "https://api.mana.am/mcp" \
   https://mana.am/.well-known/agent-skills/mana/SKILL.md).
 - Context index: https://mana.am/llms.txt and https://mana.am/llms-full.txt
 - Pricing: https://mana.am/pricing.md · Auth: https://mana.am/auth.md
+- API examples: https://mana.am/api/examples.md
+- Developer quickstart: https://mana.am/developers/quickstart.md
 
-Install the skill locally:
+Install the official skill locally:
 
 ```bash
-npx skills add mana-am/agent-presence@mana
+npx skills add https://github.com/mana-am/agent-presence --skill mana
 ```
+
+## External publishing runbooks
+
+- [`GPT-STORE.md`](./GPT-STORE.md) — copy-paste configuration for a public ChatGPT GPT.
+- [`MCP-REGISTRY.md`](./MCP-REGISTRY.md) — MCP Registry submission checklist.
+- [`SMITHERY.md`](./SMITHERY.md) — Smithery listing and verified-server request.
+- [`WIKIPEDIA-WIKIDATA.md`](./WIKIPEDIA-WIKIDATA.md) — neutral entity and notability workflow.
+- [`COMMUNITY-LAUNCH.md`](./COMMUNITY-LAUNCH.md) — third-party corpus launch checklist.
 
 ## Links
 
